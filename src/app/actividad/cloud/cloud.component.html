@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Linserman</ion-title>
+    <ion-buttons slot="start" style="position: absolute !important;">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-progress-bar [value]="uploadProgress" color="primary"></ion-progress-bar>
+  <ion-grid>
+    <ion-row class="title">
+      <p>Contrato </p> <p> > </p>  <p>Sector </p>  <p> > </p> <p><b > Actividad</b></p>
+    </ion-row>
+    <ion-row>
+      <ion-col  *ngFor="let f of files; let i=index" size="6" (click)="opcionesImagen(i)">
+        <img [src]="f" alt="" width="200px" height="300px"/>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col  *ngFor="let f of cloudFiles; let i=index" size="6" (click)="opcionesImagen(i)">
+        <img [src]="f" alt="" width="200px" height="300px"/>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-tabs>
+        <ion-tab-bar slot="bottom">
+          <ion-tab-button tab="cloud">
+            <ion-icon name="cloudy-outline"></ion-icon>
+            <ion-label>Nube</ion-label>
+          </ion-tab-button>
+          <ion-tab-button tab="local">
+            <ion-icon name="images-outline"></ion-icon>
+            <ion-label>Local</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+    </ion-row>
+  </ion-grid>
+ 
+  <ion-fab horizontal="end" vertical="center" slot="fixed">
+    <ion-fab-button color="light">
+      <ion-icon name="share"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="primary" (click)="takePhoto()">
+        <ion-icon name="camera-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+    
+    <ion-fab-list side="start">
+      <ion-fab-button color="light" (click)="pickImages()">
+        <ion-icon name="folder-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

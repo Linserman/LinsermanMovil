@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center;" color="primary">{{empresa}}</ion-title>
+    <ion-buttons slot="start" style="position: absolute !important;">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <!-- class="ion-text-center" -->
+  <ion-grid>
+    <ion-row style="padding-left: 0px;">
+      <p>Contrato </p> <p> > </p> <p><b >Sectores</b></p>
+    </ion-row>
+  </ion-grid>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+        pullingIcon="chevron-down-circle-outline"
+        pullingText="Pull to refresh"
+        refreshingSpinner="circles"
+        refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-card *ngFor="let sector of sectores" class="contrato-card" (click)="openSector(sector.id)">
+      <ion-item>
+        <ion-label class="contrato-name" >{{sector.nombre_sector}}</ion-label>
+      </ion-item>
+    
+      <ion-card-content>
+        <ion-grid>
+          <ion-col>
+            
+            <ion-row>
+              <ion-icon name="construct"></ion-icon>
+              <ion-label class="contrato-responsable">{{sector.sector_data.ciudad}}</ion-label>
+            </ion-row>
+            <ion-row>
+              <ion-icon name="location-outline"></ion-icon>
+              <ion-label class="contrato-responsable">{{sector.sector_data.zona_ciudad}}</ion-label>
+            </ion-row>
+          </ion-col>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    
+  </ion-list>
+</ion-content>

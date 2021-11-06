@@ -1,0 +1,59 @@
+<ion-app>
+  <ion-menu content-id="main">
+    <ion-content>
+      <div class="menu-header">
+        <ion-text color="primary">
+          {{empresa}}
+        </ion-text>
+        <span class="name">
+          {{user.nombres}}
+        </span>
+        <span *ngIf="user.tipo_usuario==2" class="role">
+          Fiscalizador
+        </span>
+        <span *ngIf="user.tipo_usuario==3" class="role">
+          Supervisor
+        </span>
+        <span *ngIf="user.tipo_usuario==1" class="role">
+          Administrador
+        </span>
+        <span *ngIf="user.tipo_usuario==null" class="role">
+          
+        </span>
+        
+      </div>
+      <ion-list>
+        <ion-menu-toggle  routerLink="/home">
+          <ion-item>
+            <ion-icon name="book-outline" slot="start"></ion-icon>
+            <ion-label>Contratos </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle  routerLink="/login">
+          <ion-item>
+         
+            <ion-label>Reportar Error </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        
+        
+        <ion-menu-toggle  routerLink="/login">
+          <ion-item>
+          
+          <ion-label>Acerca </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <!-- <ion-menu-toggle  routerLink="/login">
+          <ion-item>
+            <ion-label>Cerrar Sesion </ion-label>
+          </ion-item>
+        </ion-menu-toggle> -->
+        
+      </ion-list>
+      <ion-button class="btn-logout" (click)="logout()">
+        Cerrar Sesion
+      </ion-button>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

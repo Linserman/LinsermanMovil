@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "962239874369",
+    "project_id": "linserman-f42f8",
+    "storage_bucket": "linserman-f42f8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:962239874369:android:7a3ad498774439e2c10dc0",
+        "android_client_info": {
+          "package_name": "com.linserman.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "962239874369-b80d5rtjsdd0u7vrfkl7dlg3gb4rju70.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHLXe7GbzNdaRAhi4vRD0_jR6PiQnrI3k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "962239874369-b80d5rtjsdd0u7vrfkl7dlg3gb4rju70.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,6 @@
+{
+	"appId": "com.linserman.app",
+	"appName": "Linserman",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

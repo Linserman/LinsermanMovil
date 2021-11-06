@@ -1,0 +1,65 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center;" color="primary">{{empresa}}</ion-title>
+    <ion-buttons slot="start" style="position: absolute !important;">
+      <ion-menu-button></ion-menu-button> 
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  
+  <div class="ion-text-center">
+    
+    <ion-text >  <h1>Contratos</h1></ion-text>
+  </div>
+  <!--  -->
+  <!-- <ion-grid>
+    <ion-col>
+      <ion-row>
+       ion-list
+      </ion-row>
+    </ion-col>
+  </ion-grid> -->
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+        pullingIcon="chevron-down-circle-outline"
+        pullingText="Pull to refresh"
+        refreshingSpinner="circles"
+        refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <!-- <div class="ion-text-center">
+    <span *ngIf="contratos.length==0" > Al parecer no tienes contratos...</span>
+  </div> -->
+  
+  <ion-list>
+
+    <ion-card *ngFor="let contrato of lsContratos" class="contrato-card" (click)="openContrato(contrato)">
+      <ion-item>
+        <ion-label class="contrato-name" >{{contrato.nombre_contrato}}</ion-label>
+      </ion-item>
+    
+      <ion-card-content>
+        <ion-grid>
+          <ion-col>
+            <ion-row>
+              <ion-label class="contrato-responsable">{{contrato.descripcion}}</ion-label>
+            </ion-row>
+            <ion-row>
+              <ion-label class="contrato-responsable">Actividades : </ion-label>
+              <ion-label class="contrato-responsable">{{contrato.sectores.length}}</ion-label>
+            </ion-row>
+          </ion-col>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    
+  </ion-list>
+</ion-content>
+
+
+<!-- <div id="container">
+  <strong>Ready to create an app?</strong>
+  <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+</div> -->

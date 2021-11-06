@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Linserman</string>
+    <string name="title_activity_main">Linserman</string>
+    <string name="package_name">com.linserman.app</string>
+    <string name="custom_url_scheme">com.linserman.app</string>
+</resources>
